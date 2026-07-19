@@ -1,8 +1,15 @@
 import ParallaxScroll from "./ParallaxScroll";
 
+type Block = {
+  id: string;
+  type: string;
+  text?: string;
+  [key: string]: unknown;
+};
+
 const header = { title: "Header" };
 
-const blocks = [
+const blocks: Block[] = [
   {
     id: "intro",
     type: "text",

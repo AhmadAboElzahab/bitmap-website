@@ -7,6 +7,9 @@ import ParallaxHeader from "./components/ParallaxHeader";
 import ParallaxContent from "./components/ParallaxContent";
 import ParallaxFooter from "./components/ParallaxFooter";
 
+/**
+ * @param {{ header?: object, blocks?: Array<Record<string, unknown>> }} props
+ */
 export default function ParallaxScroll({ header, blocks = [] }) {
   const scrollAnimateRef = useRef(null);
   const scrollAnimateMainRef = useRef(null);
