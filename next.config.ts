@@ -1,8 +1,6 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  output: "export", // This forces static export
-};
+const nextConfig: NextConfig = {};
 
 export default nextConfig;
 
