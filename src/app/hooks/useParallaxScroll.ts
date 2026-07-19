@@ -3,41 +3,23 @@
 import { useEffect, type RefObject } from "react";
 
 type UseParallaxScrollParams = {
-  scrollAnimateRef: RefObject<HTMLDivElement | null>;
   scrollAnimateMainRef: RefObject<HTMLDivElement | null>;
   headerRef: RefObject<HTMLElement | null>;
   footerRef: RefObject<HTMLElement | null>;
-  wrapperRef: RefObject<HTMLDivElement | null>;
   heightDocument: number;
   windowHeight: number;
   footerHeight: number;
 };
 
 export function useParallaxScroll({
-  scrollAnimateRef,
   scrollAnimateMainRef,
   headerRef,
   footerRef,
-  wrapperRef,
   heightDocument,
   windowHeight,
   footerHeight,
 }: UseParallaxScrollParams) {
   useEffect(() => {
-    // Set initial heights
-    if (scrollAnimateRef.current && scrollAnimateMainRef.current) {
-      scrollAnimateRef.current.style.height = `${heightDocument}px`;
-      scrollAnimateMainRef.current.style.height = `${heightDocument}px`;
-    }
-
-    if (headerRef.current) {
-      headerRef.current.style.height = `${windowHeight}px`;
-    }
-
-    if (wrapperRef.current) {
-      wrapperRef.current.style.marginTop = `${windowHeight}px`;
-    }
-
     // Scroll footer function
     const scrollFooter = (scrollY: number) => {
       if (footerRef.current) {
@@ -77,14 +59,5 @@ export function useParallaxScroll({
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [
-    scrollAnimateRef,
-    scrollAnimateMainRef,
-    headerRef,
-    footerRef,
-    wrapperRef,
-    heightDocument,
-    windowHeight,
-    footerHeight,
-  ]);
+  }, [heightDocument, windowHeight, footerHeight]);
 }
