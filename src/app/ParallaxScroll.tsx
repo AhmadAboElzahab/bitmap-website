@@ -6,19 +6,21 @@ import { useParallaxScroll } from "./hooks/useParallaxScroll";
 import ParallaxHeader from "./components/ParallaxHeader";
 import ParallaxContent from "./components/ParallaxContent";
 import ParallaxFooter from "./components/ParallaxFooter";
+import type { Block, HeaderData } from "./types";
 
-/**
- * @param {{ header?: object, blocks?: Array<Record<string, unknown>> }} props
- */
-export default function ParallaxScroll({ header, blocks = [] }) {
-  const scrollAnimateRef = useRef(null);
-  const scrollAnimateMainRef = useRef(null);
-  const headerRef = useRef(null);
-  const footerRef = useRef(null);
-  const wrapperRef = useRef(null);
+type ParallaxScrollProps = {
+  header?: HeaderData;
+  blocks?: Block[];
+};
 
-  const { windowHeight, footerHeight, contentHeight, heightDocument } =
-    useParallaxConfig();
+export default function ParallaxScroll({ header, blocks = [] }: ParallaxScrollProps) {
+  const scrollAnimateRef = useRef<HTMLDivElement>(null);
+  const scrollAnimateMainRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLElement>(null);
+  const footerRef = useRef<HTMLElement>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+
+  const { windowHeight, footerHeight, heightDocument } = useParallaxConfig();
 
   useParallaxScroll({
     scrollAnimateRef,

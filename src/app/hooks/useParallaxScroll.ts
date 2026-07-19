@@ -1,6 +1,17 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, type RefObject } from "react";
+
+type UseParallaxScrollParams = {
+  scrollAnimateRef: RefObject<HTMLDivElement | null>;
+  scrollAnimateMainRef: RefObject<HTMLDivElement | null>;
+  headerRef: RefObject<HTMLElement | null>;
+  footerRef: RefObject<HTMLElement | null>;
+  wrapperRef: RefObject<HTMLDivElement | null>;
+  heightDocument: number;
+  windowHeight: number;
+  footerHeight: number;
+};
 
 export function useParallaxScroll({
   scrollAnimateRef,
@@ -11,7 +22,7 @@ export function useParallaxScroll({
   heightDocument,
   windowHeight,
   footerHeight,
-}) {
+}: UseParallaxScrollParams) {
   useEffect(() => {
     // Set initial heights
     if (scrollAnimateRef.current && scrollAnimateMainRef.current) {
@@ -28,7 +39,7 @@ export function useParallaxScroll({
     }
 
     // Scroll footer function
-    const scrollFooter = (scrollY) => {
+    const scrollFooter = (scrollY: number) => {
       if (footerRef.current) {
         const scrollThreshold = heightDocument - windowHeight - footerHeight;
         if (scrollY >= scrollThreshold) {

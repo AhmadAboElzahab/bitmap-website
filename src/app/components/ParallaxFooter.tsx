@@ -1,8 +1,12 @@
-export default function ParallaxFooter({
-  footerRef,
-  title = "Footer",
-  children,
-}) {
+import type { RefObject } from "react";
+
+type ParallaxFooterProps = {
+  footerRef: RefObject<HTMLElement | null>;
+  title?: string;
+  children?: React.ReactNode;
+};
+
+export default function ParallaxFooter({ footerRef }: ParallaxFooterProps) {
   return (
     <footer
       ref={footerRef}
