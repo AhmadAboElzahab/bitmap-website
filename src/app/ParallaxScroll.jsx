@@ -7,7 +7,7 @@ import ParallaxHeader from "./components/ParallaxHeader";
 import ParallaxContent from "./components/ParallaxContent";
 import ParallaxFooter from "./components/ParallaxFooter";
 
-export default function ParallaxScroll() {
+export default function ParallaxScroll({ header, blocks = [] }) {
   const scrollAnimateRef = useRef(null);
   const scrollAnimateMainRef = useRef(null);
   const headerRef = useRef(null);
@@ -39,8 +39,8 @@ export default function ParallaxScroll() {
           ref={wrapperRef}
           className="wrapper-parallax mb-[300px] shadow-[0_0_20px_rgba(0,0,0,0.5)]"
         >
-          <ParallaxHeader headerRef={headerRef} />
-          <ParallaxContent />
+          {header && <ParallaxHeader headerRef={headerRef} {...header} />}
+          <ParallaxContent blocks={blocks} />
 
           <ParallaxFooter footerRef={footerRef} />
         </div>

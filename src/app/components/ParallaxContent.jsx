@@ -1,10 +1,15 @@
-export default function ParallaxContent({ title = "Content", children }) {
+import { blockRegistry } from "./blocks";
+
+export default function ParallaxContent({ blocks = [] }) {
+  if (!blocks.length) return null;
+
   return (
-    <section className="content h-500 min-h-500   bg-white relative z-[1]">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos et esse
-      officiis minus optio qui adipisci necessitatibus culpa, voluptatibus
-      asperiores eius consequatur, cum a quas distinctio ex doloribus voluptates
-      repudiandae.
+    <section className="content h-500 min-h-500 bg-white relative z-[1] flex flex-col gap-10 p-10">
+      {blocks.map((block, index) => {
+        const Block = blockRegistry[block.type];
+        if (!Block) return null;
+        return <Block key={block.id ?? index} {...block} />;
+      })}
     </section>
   );
 }
