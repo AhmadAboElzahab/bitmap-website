@@ -9,6 +9,41 @@ const blocks: Block[] = [
     type: "text",
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos et esse officiis minus optio qui adipisci necessitatibus culpa, voluptatibus asperiores eius consequatur, cum a quas distinctio ex doloribus voluptates repudiandae.",
   },
+  {
+    id: "intro",
+    type: "text",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos et esse officiis minus optio qui adipisci necessitatibus culpa, voluptatibus asperiores eius consequatur, cum a quas distinctio ex doloribus voluptates repudiandae.",
+  },
+  {
+    id: "intro",
+    type: "text",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos et esse officiis minus optio qui adipisci necessitatibus culpa, voluptatibus asperiores eius consequatur, cum a quas distinctio ex doloribus voluptates repudiandae.",
+  },
+  {
+    id: "intro",
+    type: "text",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos et esse officiis minus optio qui adipisci necessitatibus culpa, voluptatibus asperiores eius consequatur, cum a quas distinctio ex doloribus voluptates repudiandae.",
+  },
+  {
+    id: "intro",
+    type: "text",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos et esse officiis minus optio qui adipisci necessitatibus culpa, voluptatibus asperiores eius consequatur, cum a quas distinctio ex doloribus voluptates repudiandae.",
+  },
+  {
+    id: "intro",
+    type: "text",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos et esse officiis minus optio qui adipisci necessitatibus culpa, voluptatibus asperiores eius consequatur, cum a quas distinctio ex doloribus voluptates repudiandae.",
+  },
+  {
+    id: "intro",
+    type: "text",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos et esse officiis minus optio qui adipisci necessitatibus culpa, voluptatibus asperiores eius consequatur, cum a quas distinctio ex doloribus voluptates repudiandae.",
+  },
+  {
+    id: "intro",
+    type: "text",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos et esse officiis minus optio qui adipisci necessitatibus culpa, voluptatibus asperiores eius consequatur, cum a quas distinctio ex doloribus voluptates repudiandae.",
+  },
 ];
 
 export default function Home() {
