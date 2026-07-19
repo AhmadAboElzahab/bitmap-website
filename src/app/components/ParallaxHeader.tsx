@@ -20,9 +20,9 @@ export default function ParallaxHeader({
           : undefined
       }
     >
-      {/* pure-CSS grid pattern, no image asset */}
+      {/* pure-CSS grid pattern, no image asset — drifts slowest for depth */}
       <div
-        className="absolute inset-0 opacity-40"
+        className="parallax-slow absolute -inset-y-20 inset-x-0 opacity-40"
         style={{
           backgroundImage:
             "linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.08) 1px, transparent 1px)",
@@ -47,15 +47,15 @@ export default function ParallaxHeader({
         aria-hidden
       />
 
-      <div className="relative z-10 w-full h-full flex flex-col items-center justify-center text-center px-6 gap-5 sm:gap-7">
-        <span className="text-xs sm:text-sm uppercase tracking-[0.3em] text-white/60 font-semibold">
+      <div className="relative z-10 w-full min-h-screen flex flex-col items-center justify-center text-center px-6 gap-5 sm:gap-7">
+        <span className="reveal-up text-xs sm:text-sm uppercase tracking-[0.3em] text-white/60 font-semibold">
           {eyebrow}
         </span>
-        <h1 className="p-0 m-0 uppercase text-[clamp(2.75rem,11vw,10rem)] leading-[0.95] font-black text-white tracking-tight">
+        <h1 className="reveal-up p-0 m-0 uppercase text-[clamp(2.75rem,11vw,10rem)] leading-[0.95] font-black text-white tracking-tight [animation-delay:80ms]">
           {title}
         </h1>
         {subtitle && (
-          <p className="max-w-[600px] text-sm sm:text-lg text-white/70 leading-relaxed">
+          <p className="reveal-up max-w-[600px] text-sm sm:text-lg text-white/70 leading-relaxed [animation-delay:160ms]">
             {subtitle}
           </p>
         )}
