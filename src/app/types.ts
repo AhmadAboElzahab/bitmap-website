@@ -6,5 +6,7 @@ export type Block = {
 
 export type HeaderData = {
   title?: string;
+  subtitle?: string;
+  eyebrow?: string;
   backgroundImage?: string;
 };

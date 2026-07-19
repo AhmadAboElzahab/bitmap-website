@@ -3,11 +3,5 @@ type TextBlockProps = {
 };
 
 export default function TextBlock({ text }: TextBlockProps) {
-  return (
-    <p className="max-w-[800px]">
-      {text} Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-      Perspiciatis provident, ullam accusamus dignissimos similique mollitia,
-      hic
-    </p>
-  );
+  return <p className="max-w-175 text-base sm:text-lg text-black/70 leading-relaxed">{text}</p>;
 }
