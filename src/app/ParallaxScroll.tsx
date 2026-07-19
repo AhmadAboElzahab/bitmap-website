@@ -36,7 +36,7 @@ export default function ParallaxScroll({ header, blocks = [] }: ParallaxScrollPr
         id="scroll-animate-main"
         className="w-full left-0 fixed h-[calc(100vh+2780px)] transition-all duration-[400ms] ease-[cubic-bezier(0,0,0,1)]"
       >
-        <div className="wrapper-parallax mt-[100vh] mb-[300px] shadow-[0_0_20px_rgba(0,0,0,0.5)]">
+        <div className="wrapper-parallax pt-[100vh] mb-[300px] shadow-[0_0_20px_rgba(0,0,0,0.5)]">
           {header && <ParallaxHeader headerRef={headerRef} {...header} />}
           <ParallaxContent blocks={blocks} />
 
